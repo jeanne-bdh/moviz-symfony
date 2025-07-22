@@ -1,1 +1,0 @@
-# moviz-symfony
