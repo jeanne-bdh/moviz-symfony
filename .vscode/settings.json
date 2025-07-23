@@ -1,0 +1,14 @@
+{
+    "php.validate.executablePath": "/usr/local/bin/php",
+    "files.exclude": {
+        "**/var/cache": true,
+        "**/var/log": true
+    },
+    "search.exclude": {
+        "**/var/cache": true,
+        "**/var/log": true
+    },
+    "intelephense.files.exclude": [
+        "**/var/**"
+    ]
+}
