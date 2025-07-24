@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ReviewRepository;
+use App\Entity\Movie;
+use App\Entity\User;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -21,10 +23,10 @@ class Review
     private ?bool $approved = null;
 
     #[ORM\ManyToOne(inversedBy: 'reviews')]
-    private ?user $user = null;
+    private ?User $user = null;
 
     #[ORM\ManyToOne(inversedBy: 'reviews')]
-    private ?movie $movie = null;
+    private ?Movie $movie = null;
 
     public function getId(): ?int
     {
@@ -67,12 +69,12 @@ class Review
         return $this;
     }
 
-    public function getMovie(): ?movie
+    public function getMovie(): ?Movie
     {
         return $this->movie;
     }
 
-    public function setMovie(?movie $movie): static
+    public function setMovie(?Movie $movie): static
     {
         $this->movie = $movie;
 

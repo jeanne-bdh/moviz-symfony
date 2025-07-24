@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\DirectorRepository;
+use App\Entity\Movie;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
