@@ -20,7 +20,7 @@ class Movie
     private ?string $name = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTime $release_year = null;
+    private ?\DateTime $releaseYear = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $synopsis = null;
@@ -53,6 +53,11 @@ class Movie
         $this->genre = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -72,12 +77,12 @@ class Movie
 
     public function getReleaseYear(): ?\DateTime
     {
-        return $this->release_year;
+        return $this->releaseYear;
     }
 
-    public function setReleaseYear(\DateTime $release_year): static
+    public function setReleaseYear(\DateTime $releaseYear): static
     {
-        $this->release_year = $release_year;
+        $this->releaseYear = $releaseYear;
 
         return $this;
     }

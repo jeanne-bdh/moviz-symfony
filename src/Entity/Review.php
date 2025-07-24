@@ -28,6 +28,9 @@ class Review
     #[ORM\ManyToOne(inversedBy: 'reviews')]
     private ?Movie $movie = null;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $review = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -77,6 +80,18 @@ class Review
     public function setMovie(?Movie $movie): static
     {
         $this->movie = $movie;
+
+        return $this;
+    }
+
+    public function getReview(): ?string
+    {
+        return $this->review;
+    }
+
+    public function setReview(?string $review): static
+    {
+        $this->review = $review;
 
         return $this;
     }
