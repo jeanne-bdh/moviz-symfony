@@ -146,12 +146,10 @@ class Movie
 
     public function removeReview(Review $review): static
     {
-        if ($this->reviews->removeElement($review)) {
+        if ($this->reviews->removeElement($review) && $review->getMovie() === $this) {
             // set the owning side to null (unless already changed)
-            if ($review->getMovie() === $this) {
                 $review->setMovie(null);
             }
-        }
 
         return $this;
     }
